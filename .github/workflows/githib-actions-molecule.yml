@@ -11,8 +11,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          path: ansible/roles/
+
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
@@ -22,5 +21,9 @@ jobs:
           python3 -m pip install --upgrade pip
           python3 -m pip install --upgrade ansible molecule docker
       - name: Test with molecule
-        run: |
-          molecule test
+        run: molecule test
+        env:
+          PY_COLORS: '1'
+          ANSIBLE_FORCE_COLOR: '1'
+          MOLECULE_DISTRO: ${{ matrix.python-version }}
+        working-directory: ansible/roles/molecule
