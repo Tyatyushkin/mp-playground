@@ -1,5 +1,5 @@
 ---
-name: update repos
-apt:
-  update_cache: yes
+- name: update cache
+  apt:
+    name: aptitude
 # tasks file for common
