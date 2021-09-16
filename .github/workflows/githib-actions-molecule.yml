@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          path: ansible/roles/molecule/
+          path: ansible/roles/
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
