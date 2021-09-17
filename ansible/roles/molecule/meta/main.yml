@@ -1,6 +1,5 @@
 galaxy_info:
   author: Max Tyatyushkin
-  role_name: molecule
   description: check molecule role
   company: Masterplan
 
